@@ -46,13 +46,3 @@ app.use(router);
 app.listen(3000, () => {
    console.log('Servidor corriendo en el puerto 3000')
 });
-
-app.on("connection", (socket) => {
-    socket.on('name', (name) => {
-        socket.emit('welcome', 'Welcome ' + name)
-    });
-
-    socket.on('disconnect', () => {
-        console.log('Servidor desconectado')
-    });
-  });
